@@ -1,0 +1,17 @@
+import canonicalLaneMathlib.AdmissibleClass
+import HautevilleHouse.CharacterizationTheoremsPermutationGroupsTheoremCanonicalLaneLean.PermutationGroupStructures
+import HautevilleHouse.CharacterizationTheoremsPermutationGroupsTheoremCanonicalLaneLean.JordanHolderStructure
+import HautevilleHouse.CharacterizationTheoremsPermutationGroupsTheoremCanonicalLaneLean.OreTheorem
+
+namespace HautevilleHouse
+namespace CharacterizationTheoremsPermutationGroupsTheoremCanonicalLaneLean
+
+def ConstrainedTheoremClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_theorem_endgame (A : AdmissibleClass) :
+    ConstrainedTheoremClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end CharacterizationTheoremsPermutationGroupsTheoremCanonicalLaneLean
+end HautevilleHouse
